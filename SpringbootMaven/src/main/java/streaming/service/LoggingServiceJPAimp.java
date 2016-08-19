@@ -18,9 +18,10 @@ public class LoggingServiceJPAimp implements LoggingService{
         
     }
 
-    public void ajouter(String msg, Date dateLogging) {
+    public void ajouter(String msg) {
         Logging logging = new Logging();
-        loggingDAO.ajouter(logging, msg, (Date) dateLogging);
+        logging.setDatelogging(new Date());
+        loggingDAO.ajouter(logging, msg);
     }
 
     

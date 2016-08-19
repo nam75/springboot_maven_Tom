@@ -19,7 +19,7 @@ public interface LoggingService {
     
     
     public void log(String msg);
-    public void ajouter(String msg,Date dateLogging);
+    public void ajouter(String msg);
 
         
 }

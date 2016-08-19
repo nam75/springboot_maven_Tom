@@ -18,9 +18,8 @@ import streaming.entity.Logging;
 @Repository
 public class LoggingDAOJPAImp implements LoggingDAO{
 
-     public void ajouter(Logging logging, String msg, Date dateLogging) {
+     public void ajouter(Logging logging, String msg) {
         logging.setMsg(msg);
-        logging.setDatelogging(dateLogging);
         EntityManager em = Persistence.createEntityManagerFactory("streaming_PU").createEntityManager();
         em.getTransaction().begin();
         em.persist(logging);
