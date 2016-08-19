@@ -22,7 +22,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(basePackages="streaming")
+@ComponentScan(basePackages="streaming")//recherche les @Service, @Controller....
 @EnableJpaRepositories(basePackages = "streaming")
 public class SpringConfig {
     
