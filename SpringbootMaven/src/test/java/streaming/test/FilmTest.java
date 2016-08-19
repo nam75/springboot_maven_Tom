@@ -28,7 +28,7 @@ public class FilmTest {
   @Test
     public void testAjouterFilm() {
         Film film = new Film();
-        film.setTitre("Oscar au pays des Blondes");
+        film.setTitre("Sucide Sex");
         filmService.ajouter(film);
     }
 }
