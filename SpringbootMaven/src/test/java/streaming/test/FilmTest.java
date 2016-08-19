@@ -5,14 +5,14 @@
  */
 package streaming.test;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import streaming.service.DistributeurService;
-import streaming.service.LoggingService;
+import streaming.entity.Film;
+import streaming.service.FilmServiceImpl;
+import streaming.service.IFilmService;
 import streaming.spring.SpringConfig;
 
 /**
@@ -20,23 +20,15 @@ import streaming.spring.SpringConfig;
  * @author admin
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringConfig.class)
-public class DistributeurLoggingTest {
+@SpringApplicationConfiguration(classes=SpringConfig.class)
+public class FilmTest {
     
-    @Autowired
-    private LoggingService loggingService;
-    //@Autowired 
-    //private DistributeurService distributeurService;
-    
-    
-    @Test
-    public void log() {
-        loggingService.ajouter(" King of rise");
+  @Autowired
+  private IFilmService filmService;
+  @Test
+    public void testAjouterFilm() {
+        Film film = new Film();
+        film.setTitre("Oscar au pays des Blondes");
+        filmService.ajouter(film);
     }
-    /*
-    @Test
-    public void testRetrait() {
-        Assert.assertTrue(distributeurService.retrait((long)1, (short)1234,100));
-    }
-   */
 }
